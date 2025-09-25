@@ -278,7 +278,7 @@ export default function AnimalDetailsPage() {
                       {!user && (
                         <div className="space-y-2">
                           <Link href="/login">
-                            <Button className="w-full" size="lg">Fazer Login</Button>
+                            <Button className="w-full bg-purple-600 hover:bg-purple-700 mb-2" size="lg">Fazer Login</Button>
                           </Link>
                           <Link href="/register">
                             <Button variant="outline" className="w-full" size="lg">Criar Conta</Button>

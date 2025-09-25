@@ -216,7 +216,7 @@ export default function PetsPage() {
                   animal={animal}
                   onAdopt={handleAdopt}
                   onSponsor={handleSponsor}
-                  showActions={user?.role === UserRole.INTERESSADO}
+                  showActions={true}
                 />
               ))}
             </div>
@@ -236,7 +236,6 @@ export default function PetsPage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link href="/register">
                   <Button className="bg-purple-600 hover:bg-purple-700">
-                    <Logo className="mr-2" size="sm" />
                     Criar Conta
                   </Button>
                 </Link>
