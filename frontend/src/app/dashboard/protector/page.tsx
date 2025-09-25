@@ -9,7 +9,8 @@ import { Button } from '@/components/ui/Button';
 import { authService } from '@/services/auth.service';
 import { animalsService } from '@/services/animals.service';
 import { Animal, UserRole } from '@/types';
-import { Plus, PawPrint, Heart, Users, ArrowLeft } from 'lucide-react';
+import { Plus, PawPrint, Users, ArrowLeft, BarChart3 } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function ProtectorDashboard() {
   const [animals, setAnimals] = useState<Animal[]>([]);
@@ -54,7 +55,7 @@ export default function ProtectorDashboard() {
         <Navbar />
         <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
           <div className="text-center">
-            <PawPrint className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" />
+            <Logo className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" size="xl" />
             <p className="text-gray-600">Carregando dashboard...</p>
           </div>
         </div>
@@ -83,7 +84,7 @@ export default function ProtectorDashboard() {
           </div>
           
           <Link href="/dashboard/protector/novo-animal">
-            <Button>
+            <Button className="bg-purple-600 hover:bg-purple-700">
               <Plus className="w-4 h-4 mr-2" />
               Cadastrar Animal
             </Button>
@@ -95,7 +96,7 @@ export default function ProtectorDashboard() {
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center">
               <div className="bg-blue-100 p-3 rounded-full">
-                <PawPrint className="w-6 h-6 text-blue-600" />
+                <BarChart3 className="w-6 h-6 text-blue-600" />
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Total de Animais</p>
@@ -107,7 +108,7 @@ export default function ProtectorDashboard() {
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center">
               <div className="bg-green-100 p-3 rounded-full">
-                <Heart className="w-6 h-6 text-green-600" />
+                <PawPrint className="w-6 h-6 text-green-600" />
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Disponíveis</p>
@@ -156,7 +157,7 @@ export default function ProtectorDashboard() {
                 Comece cadastrando seu primeiro animal para encontrar um lar cheio de amor.
               </p>
               <Link href="/dashboard/protector/novo-animal">
-                <Button>
+                <Button className="bg-purple-600 hover:bg-purple-700">
                   <Plus className="w-4 h-4 mr-2" />
                   Cadastrar Primeiro Animal
                 </Button>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, useParams } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
+import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
@@ -148,7 +149,7 @@ export default function EditarAnimalPage() {
         <Navbar />
         <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
           <div className="text-center">
-            <PawPrint className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" />
+            <Logo className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" size="xl" />
             <p className="text-gray-600">Carregando animal...</p>
           </div>
         </div>

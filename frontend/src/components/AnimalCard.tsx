@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Animal, AnimalEspecie, AnimalPorte, AnimalStatus } from '@/types';
 import { Button } from './ui/Button';
-import { Heart, MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface AnimalCardProps {
   animal: Animal;
@@ -74,7 +76,8 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+    <Link href={`/animal/${animal.id}`} className="block">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
       <div className="relative h-48">
         {animal.fotos && animal.fotos.length > 0 ? (
           <Image
@@ -85,7 +88,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
           />
         ) : (
           <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <Heart className="w-12 h-12 text-gray-400" />
+            <Logo className="w-12 h-12 text-gray-400" size="xl" />
           </div>
         )}
         <div className="absolute top-2 right-2">
@@ -134,7 +137,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
           <div className="flex gap-2">
             <Button
               size="sm"
-              className="flex-1"
+              className="flex-1 bg-purple-600 hover:bg-purple-700"
               onClick={() => onAdopt?.(animal)}
             >
               Adotar
@@ -150,6 +153,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
           </div>
         )}
       </div>
-    </div>
+      </div>
+    </Link>
   );
 };

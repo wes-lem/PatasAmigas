@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { authService } from '@/services/auth.service';
 import { LoginRequest } from '@/types';
-import { Heart, Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState<LoginRequest>({
@@ -51,7 +52,7 @@ export default function LoginPage() {
         <div className="max-w-md w-full space-y-8">
           <div>
             <div className="flex justify-center">
-              <Heart className="w-12 h-12 text-blue-600" />
+              <Logo defaultColor={true} size="xl" />
             </div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Entre na sua conta

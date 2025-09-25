@@ -9,7 +9,8 @@ import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { authService } from '@/services/auth.service';
 import { RegisterRequest, UserRole } from '@/types';
-import { Heart, Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState<RegisterRequest>({
@@ -74,7 +75,7 @@ export default function RegisterPage() {
         <div className="max-w-md w-full space-y-8">
           <div>
             <div className="flex justify-center">
-              <Heart className="w-12 h-12 text-blue-600" />
+              <Logo defaultColor={true} size="xl" />
             </div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Crie sua conta

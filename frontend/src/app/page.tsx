@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Button } from '@/components/ui/Button';
-import { Heart, Users, Shield, PawPrint } from 'lucide-react';
+import { Users, Shield, PawPrint, Search, Heart } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function Home() {
   return (
@@ -20,14 +21,12 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pets">
-                <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-                  <PawPrint className="w-5 h-5 mr-2" />
+                <Button size="lg" variant="secondary" className="border-white border-2 bg-white text-blue-600 hover:bg-transparent hover:text-gray-100 hover:bg-gray-100">
                   Ver Animais
                 </Button>
               </Link>
               <Link href="/register">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-                  <Heart className="w-5 h-5 mr-2" />
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent border-2">
                   Cadastrar-se
                 </Button>
               </Link>
@@ -51,7 +50,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <PawPrint className="w-8 h-8 text-blue-600" />
+                <Search className="w-8 h-8 text-blue-800" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Encontre Animais</h3>
               <p className="text-gray-600">
@@ -117,14 +116,14 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/register">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
                 <Users className="w-5 h-5 mr-2" />
                 Cadastrar-se Agora
               </Button>
             </Link>
             <Link href="/pets">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
-                <PawPrint className="w-5 h-5 mr-2" />
+                <Logo className="w-5 h-5 mr-2" size="sm" />
                 Ver Animais
               </Button>
             </Link>
@@ -138,7 +137,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Heart className="w-6 h-6 text-blue-400" />
+                <Logo className="text-purple-400" size="md" />
                 <span className="text-xl font-bold">Patas Amigas</span>
               </div>
               <p className="text-gray-400">

@@ -10,7 +10,8 @@ import { animalsService } from '@/services/animals.service';
 import { authService } from '@/services/auth.service';
 import { solicitacoesService } from '@/services/solicitacoes.service';
 import { Animal, AnimalEspecie, AnimalPorte, SolicitacaoTipo, UserRole } from '@/types';
-import { Search, Filter, Heart, PawPrint } from 'lucide-react';
+import { Search, Filter, PawPrint } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function PetsPage() {
   const [animals, setAnimals] = useState<Animal[]>([]);
@@ -125,7 +126,7 @@ export default function PetsPage() {
         <Navbar />
         <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
           <div className="text-center">
-            <PawPrint className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" />
+            <Logo className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" size="xl" />
             <p className="text-gray-600">Carregando animais...</p>
           </div>
         </div>
@@ -163,7 +164,7 @@ export default function PetsPage() {
                 placeholder="Buscar por nome, raça ou descrição..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white placeholder-gray-500"
               />
             </div>
             
@@ -192,7 +193,7 @@ export default function PetsPage() {
 
         {filteredAnimals.length === 0 ? (
           <div className="text-center py-12">
-            <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <Logo className="w-16 h-16 text-gray-300 mx-auto mb-4" size="xl" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Nenhum animal encontrado
             </h3>
@@ -234,8 +235,8 @@ export default function PetsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link href="/register">
-                  <Button>
-                    <Heart className="w-4 h-4 mr-2" />
+                  <Button className="bg-purple-600 hover:bg-purple-700">
+                    <Logo className="mr-2" size="sm" />
                     Criar Conta
                   </Button>
                 </Link>

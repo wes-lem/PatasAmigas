@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Patas Amigas - Adoção e Apadrinhamento de Animais",
   description: "Conectando abrigos e protetores de animais com pessoas interessadas em adotar ou apadrinhar",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

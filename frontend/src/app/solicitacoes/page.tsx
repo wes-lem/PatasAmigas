@@ -9,7 +9,8 @@ import { Button } from '@/components/ui/Button';
 import { authService } from '@/services/auth.service';
 import { solicitacoesService } from '@/services/solicitacoes.service';
 import { Solicitacao, SolicitacaoStatus, SolicitacaoTipo, UserRole } from '@/types';
-import { Heart, Clock, CheckCircle, XCircle, ArrowLeft, X, Check, UserX } from 'lucide-react';
+import { Clock, CheckCircle, XCircle, ArrowLeft, X, Check, UserX } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 
 export default function SolicitacoesPage() {
   const [solicitacoes, setSolicitacoes] = useState<Solicitacao[]>([]);
@@ -152,7 +153,7 @@ export default function SolicitacoesPage() {
         <Navbar />
         <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
           <div className="text-center">
-            <Heart className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" />
+            <Logo className="w-12 h-12 text-blue-600 animate-pulse mx-auto mb-4" size="xl" />
             <p className="text-gray-600">Carregando solicitações...</p>
           </div>
         </div>
@@ -194,7 +195,7 @@ export default function SolicitacoesPage() {
         {/* Lista de Solicitações */}
         {solicitacoes.length === 0 ? (
           <div className="text-center py-12">
-            <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <Logo className="w-16 h-16 text-gray-300 mx-auto mb-4" size="xl" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               Nenhuma solicitação encontrada
             </h3>
@@ -205,8 +206,8 @@ export default function SolicitacoesPage() {
               }
             </p>
             <Link href="/pets">
-              <Button>
-                <Heart className="w-4 h-4 mr-2" />
+              <Button className="bg-purple-600 hover:bg-purple-700">
+                <Logo className="mr-2" size="sm" />
                 Ver Animais
               </Button>
             </Link>

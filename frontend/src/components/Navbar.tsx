@@ -6,7 +6,8 @@ import { useRouter } from 'next/navigation';
 import { User, UserRole } from '@/types';
 import { authService } from '@/services/auth.service';
 import { Button } from './ui/Button';
-import { Heart, Menu, X, User as UserIcon, LogOut } from 'lucide-react';
+import { Menu, X, User as UserIcon, LogOut } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -45,7 +46,7 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <Heart className="w-8 h-8 text-blue-600" />
+              <Logo defaultColor={true} size="lg" />
               <span className="text-xl font-bold text-gray-900">Patas Amigas</span>
             </Link>
           </div>
@@ -78,7 +79,7 @@ export const Navbar: React.FC = () => {
                     <span className="text-sm text-gray-700">{user.name}</span>
                     <span className="text-xs text-gray-500">({getRoleLabel(user.role)})</span>
                   </div>
-                  <Button size="sm" variant="outline" onClick={handleLogout}>
+                  <Button size="sm" variant="outline" className='hover:bg-purple-600 hover:text-white' onClick={handleLogout}>
                     <LogOut className="w-4 h-4 mr-1" />
                     Sair
                   </Button>
@@ -87,12 +88,12 @@ export const Navbar: React.FC = () => {
             ) : (
               <div className="flex items-center space-x-4">
                 <Link href="/login">
-                  <Button size="sm" variant="outline">
+                  <Button size="sm" variant="outline" className='hover:bg-purple-600 hover:text-white'>
                     Entrar
                   </Button>
                 </Link>
                 <Link href="/register">
-                  <Button size="sm">
+                  <Button size="sm" className='bg-purple-600 text-white hover:bg-purple-700'>
                     Cadastrar
                   </Button>
                 </Link>
@@ -117,7 +118,7 @@ export const Navbar: React.FC = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
               <Link
                 href="/pets"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Animais

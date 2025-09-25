@@ -2,7 +2,7 @@ import { Injectable, NotFoundException, ForbiddenException, BadRequestException 
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateSolicitacaoDto } from './dto/create-solicitacao.dto';
 import { UpdateSolicitacaoStatusDto } from './dto/update-solicitacao-status.dto';
-import { SolicitacaoStatus } from '@prisma/client';
+import { SolicitacaoStatus, SolicitacaoTipo } from '@prisma/client';
 
 @Injectable()
 export class SolicitacoesService {
