@@ -1,0 +1,121 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  INTERESSADO
+  PROTETOR
+  ADMIN
+}
+
+model User {
+  id              Int            @id @default(autoincrement())
+  email           String         @unique
+  name            String
+  password        String
+  role            UserRole       @default(INTERESSADO)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  
+  // Relações
+  animais         Animal[]
+  solicitacoes    Solicitacao[]
+}
+
+enum AnimalPorte {
+  PEQUENO
+  MEDIO
+  GRANDE
+}
+
+enum AnimalEspecie {
+  CAO
+  GATO
+  OUTRO
+}
+
+enum AnimalStatus {
+  DISPONIVEL
+  ADOTADO
+  APADRINHADO
+  INDISPONIVEL
+}
+
+model Animal {
+  id              Int           @id @default(autoincrement())
+  nome            String
+  especie         AnimalEspecie
+  raca            String?
+  idade           Int
+  porte           AnimalPorte
+  descricao       String        @db.Text
+  status          AnimalStatus  @default(DISPONIVEL)
+  
+  protetorId      Int
+  protetor        User          @relation(fields: [protetorId], references: [id])
+  
+  fotos           Foto[]
+  solicitacoes    Solicitacao[]
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+model Foto {
+  id              Int      @id @default(autoincrement())
+  url             String
+  legenda         String?
+  
+  animalId        Int
+  animal          Animal   @relation(fields: [animalId], references: [id])
+}
+
+enum SolicitacaoTipo {
+  ADOCAO
+  APADRINHAMENTO
+}
+
+enum SolicitacaoStatus {
+  PENDENTE
+  APROVADA
+  REJEITADA
+  CANCELADA
+}
+
+model Solicitacao {
+  id              Int                @id @default(autoincrement())
+  tipo            SolicitacaoTipo
+  status          SolicitacaoStatus  @default(PENDENTE)
+  mensagem        String?            @db.Text
+  
+  animalId        Int
+  animal          Animal             @relation(fields: [animalId], references: [id])
+  
+  interessadoId   Int
+  interessado     User               @relation(fields: [interessadoId], references: [id])
+  
+  pagamento       Pagamento?
+  
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+}
+
+model Pagamento {
+  id                  Int       @id @default(autoincrement())
+  valor               Float
+  statusPagamento     String
+  gatewayPagamentoId  String?
+  
+  solicitacaoId       Int       @unique
+  solicitacao         Solicitacao @relation(fields: [solicitacaoId], references: [id])
+  
+  createdAt           DateTime  @default(now())
+}
