@@ -106,7 +106,7 @@ export default function LoginPage() {
             <div>
               <Button
                 type="submit"
-                className="w-full"
+                className="w-full bg-purple-600 hover:bg-purple-700"
                 disabled={isLoading}
               >
                 {isLoading ? 'Entrando...' : 'Entrar'}

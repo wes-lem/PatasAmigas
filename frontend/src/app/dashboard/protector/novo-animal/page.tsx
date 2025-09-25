@@ -255,15 +255,14 @@ export default function NovoAnimalPage() {
             <Button
               type="submit"
               disabled={isLoading}
+              className="bg-purple-600 hover:bg-purple-700"
             >
               {isLoading ? (
                 <>
-                  <PawPrint className="w-4 h-4 mr-2 animate-pulse" />
                   Cadastrando...
                 </>
               ) : (
                 <>
-                  <PawPrint className="w-4 h-4 mr-2" />
                   Cadastrar Animal
                 </>
               )}
