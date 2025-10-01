@@ -15,6 +15,17 @@ Sistema completo para conectar abrigos e protetores de animais com pessoas inter
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 
+## 📸 Screenshots
+
+### Página Inicial
+![Página Inicial](home.png)
+
+### Página de Animais
+![Página de Animais](animais.png)
+
+### Dashboard do Protetor
+![Dashboard do Protetor](protetor.png)
+
 ### Backend
 - **Node.js** com **NestJS** (TypeScript)
 - **Prisma** como ORM
