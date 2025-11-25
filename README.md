@@ -1,9 +1,5 @@
 # 🐾 Patas Amigas - Sistema de Adoção e Apadrinhamento de Animais
 
-```info
-teste
-```
-
 Sistema completo para conectar abrigos e protetores de animais com pessoas interessadas em adotar ou apadrinhar animais.
 
 ## 🚀 Tecnologias Utilizadas
